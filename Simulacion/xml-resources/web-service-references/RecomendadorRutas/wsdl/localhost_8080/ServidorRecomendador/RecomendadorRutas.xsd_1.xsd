@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://server/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://server/">
+
+<xs:element name="ClassNotFoundException" type="tns:ClassNotFoundException"/>
+
+<xs:element name="FileNotFoundException" type="tns:FileNotFoundException"/>
+
+<xs:element name="IOException" type="tns:IOException"/>
+
+<xs:element name="actualizarBaseDatos" type="tns:actualizarBaseDatos"/>
+
+<xs:element name="actualizarBaseDatosResponse" type="tns:actualizarBaseDatosResponse"/>
+
+<xs:element name="actualizarRuta" type="tns:actualizarRuta"/>
+
+<xs:element name="actualizarRutaResponse" type="tns:actualizarRutaResponse"/>
+
+<xs:element name="cargarDatos" type="tns:cargarDatos"/>
+
+<xs:element name="cargarDatosResponse" type="tns:cargarDatosResponse"/>
+
+<xs:element name="gurdarDatos" type="tns:gurdarDatos"/>
+
+<xs:element name="gurdarDatosResponse" type="tns:gurdarDatosResponse"/>
+
+<xs:element name="obtenerCosteDistancia" type="tns:obtenerCosteDistancia"/>
+
+<xs:element name="obtenerCosteDistanciaResponse" type="tns:obtenerCosteDistanciaResponse"/>
+
+<xs:element name="obtenerCosteTiempo" type="tns:obtenerCosteTiempo"/>
+
+<xs:element name="obtenerCosteTiempoResponse" type="tns:obtenerCosteTiempoResponse"/>
+
+<xs:element name="obtenerRutaDistancia" type="tns:obtenerRutaDistancia"/>
+
+<xs:element name="obtenerRutaDistanciaResponse" type="tns:obtenerRutaDistanciaResponse"/>
+
+<xs:element name="obtenerRutaTiempo" type="tns:obtenerRutaTiempo"/>
+
+<xs:element name="obtenerRutaTiempoResponse" type="tns:obtenerRutaTiempoResponse"/>
+
+<xs:complexType name="gurdarDatos">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="gurdarDatosResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="IOException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="FileNotFoundException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ClassNotFoundException">
+<xs:sequence>
+<xs:element name="exception" type="tns:throwable" minOccurs="0"/>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="throwable">
+<xs:sequence>
+<xs:element name="stackTrace" type="tns:stackTraceElement" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="stackTraceElement" final="extension restriction">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="obtenerRutaTiempo">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="obtenerRutaTiempoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cargarDatos">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="cargarDatosResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="obtenerCosteDistancia">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="obtenerCosteDistanciaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="obtenerCosteTiempo">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="obtenerCosteTiempoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="obtenerRutaDistancia">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="obtenerRutaDistanciaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarRuta">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+<xs:element name="arg2" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarRutaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarBaseDatos">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="actualizarBaseDatosResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

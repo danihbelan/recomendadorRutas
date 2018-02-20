@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://server/" xmlns:tns="http://server/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="ClassNotFoundException" type="tns:ClassNotFoundException"/>
+
+  <xs:element name="FileNotFoundException" type="tns:FileNotFoundException"/>
+
+  <xs:element name="IOException" type="tns:IOException"/>
+
+  <xs:element name="actualizarBaseDatos" type="tns:actualizarBaseDatos"/>
+
+  <xs:element name="actualizarBaseDatosResponse" type="tns:actualizarBaseDatosResponse"/>
+
+  <xs:element name="actualizarRuta" type="tns:actualizarRuta"/>
+
+  <xs:element name="actualizarRutaResponse" type="tns:actualizarRutaResponse"/>
+
+  <xs:element name="obtenerCoste" type="tns:obtenerCoste"/>
+
+  <xs:element name="obtenerCosteResponse" type="tns:obtenerCosteResponse"/>
+
+  <xs:element name="obtenerRutaNormal" type="tns:obtenerRutaNormal"/>
+
+  <xs:element name="obtenerRutaNormalResponse" type="tns:obtenerRutaNormalResponse"/>
+
+  <xs:element name="obtenerRutaTiempo" type="tns:obtenerRutaTiempo"/>
+
+  <xs:element name="obtenerRutaTiempoResponse" type="tns:obtenerRutaTiempoResponse"/>
+
+  <xs:complexType name="obtenerRutaTiempo">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="obtenerRutaTiempoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="FileNotFoundException">
+    <xs:sequence>
+      <xs:element name="message" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="IOException">
+    <xs:sequence>
+      <xs:element name="message" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ClassNotFoundException">
+    <xs:sequence>
+      <xs:element name="exception" type="tns:throwable" minOccurs="0"/>
+      <xs:element name="message" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="throwable">
+    <xs:sequence>
+      <xs:element name="stackTrace" type="tns:stackTraceElement" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="stackTraceElement" final="extension restriction">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="obtenerCoste">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="obtenerCosteResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="obtenerRutaNormal">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="obtenerRutaNormalResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="actualizarRuta">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg2" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="actualizarRutaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="actualizarBaseDatos">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="actualizarBaseDatosResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
